@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="appmodule">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/MyScript/Logic.js"></script>
+</head>
+<body ng-controller="appcontroller">
+    <h1>WEB API Versioning with Custom Headers</h1>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <td>
+                Select Version :
+            </td>
+            <td>
+                <select ng-options="ver for ver in Versions" ng-model="Version"></select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="Get Data" ng-click="getData()"/>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+    <hr />
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>EmpNo</th>
+                <th>EmpName</th>
+                <th>Salary</th>
+                <th>DeptName</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="Emp in Employees">
+                <td>
+                    <span>{{Emp.EmpNo}}</span>
+                </td>
+                <td>
+                    <span>{{Emp.EmpName}}</span>
+                </td>
+                <td>
+                    <span>{{Emp.Salary}}</span>
+                </td>
+                <td>
+                    <span>{{Emp.DeptName}}</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <span></span>
+    </div>
+</body>
+</html>
